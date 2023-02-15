@@ -37,24 +37,7 @@ async function getData(req, res) {
 }
 
 async function updateData(req, res) {
-  var data = await crudSchema.updateOne({ regid: req.params.regid.toUpperCase() }, {
-    name: req.body.name,
-    regid: req.body.regid.toUpperCase(),
-    dept: req.body.dept,
-    email: req.body.email,
-    password: req.body.password
-  })
-  if (data.modifiedCount > 0) {
-    res.json({
-      status: true,
-      message: "Data Updated!"
-    })
-  } else {
-    res.json({
-      status: false,
-      message: "Data Not Updated!"
-    })
-  }
+  console.log(res)
 }
 
 async function deleteData(req, res) {
